@@ -144,25 +144,104 @@ nav {
     justify-content: space-between;
 }
 
-.generals{
+.generals {
     display: flex;
 }
+
 .profile {
     padding: 20px;
     background-color: white;
 }
 
-.person{
+.person {
     padding-left: 20px;
 }
 
 
 /* DX */
+
+
+/* HEADER */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.tizio {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+
+.chat {
+    padding: 15px;
+    background-color: white;
+}
+
+
+/* MAIN */
 .dx main {
     background-color: burlywood;
     height: calc(100% - 100px);
 }
 
+.area {
+    padding: 20px 60px;
+}
+
+.recived {
+    background-color: white;
+    max-width: 30%;
+    min-width: 20%;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.bianco{
+    display: flex;
+    justify-content: left;
+    margin: 10px;
+
+}
+
+.sent {
+    background-color: lightgreen;
+    max-width: 30%;
+    min-width: 20%;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.verde {
+    display: flex;
+    justify-content: right;
+    margin: 10px;
+    
+}
+ 
+.text{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5px;
+    padding-left: 10px;
+    align-items: baseline;
+}
+.time{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+/* FOOTER */
 footer {
     background-color: goldenrod;
     height: 50px;

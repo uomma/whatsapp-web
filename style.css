@@ -24,60 +24,146 @@
 
 .centro {
     background-color: rgb(186, 179, 136);
-    position: absolute; 
+    position: absolute;
     height: 80%;
     width: 80%;
     top: 80px;
-    right:calc(100% - 90%);
+    right: calc(100% - 90%);
     display: flex;
     justify-content: space-around;
 }
 
-.sx{
+.sx {
     background-color: rgb(143, 122, 82);
     width: 35%;
 }
 
-.dx{
+.dx {
     background-color: rgb(128, 138, 191);
     width: 65%;
 
 }
 
-
-header{
+/* HEADERS */
+header {
     background-color: red;
     height: 50px;
 }
 
-.sx header{
+/* SX */
+.sx header {
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
     padding: 5px;
 }
-.contact{
+
+.contact {
     display: flex;
+    align-items: center;
 }
 
-.nome{padding-left: 10px;}
+.foto {
+    background-color: blue;
+    border-radius: 50%;
+    padding: 7.5px;
+}
 
-nav{
-    background-color: blueviolet;
+.nome {
+    padding-left: 10px;
+}
+
+.icons .fa-solid {
+    padding: 5px;
+}
+
+
+/* NAV */
+nav {
+
     height: 150px;
+
 }
 
-.sx main{
-    background-color: aquamarine;
+.notifiche {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(180, 240, 220);
+
+}
+
+.bell {
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.tip {
+    font-weight: 600;
+}
+
+.desktop {
+    text-decoration: underline;
+    color: rgb(177, 173, 173);
+}
+
+.search {
+    height: 75px;
+    display: flex;
+    padding: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.glasso {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.bar {
+    width: 90%;
+}
+
+/* SX MAIN */
+
+.sx main {
+    background-color: rgb(18, 123, 88);
     height: calc(100% - 200px);
 }
 
-.dx main{
+.units {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.generals{
+    display: flex;
+}
+.profile {
+    padding: 20px;
+    background-color: white;
+}
+
+.person{
+    padding-left: 20px;
+}
+
+
+/* DX */
+.dx main {
     background-color: burlywood;
     height: calc(100% - 100px);
 }
 
-footer{
+footer {
     background-color: goldenrod;
     height: 50px;
 }

@@ -246,3 +246,20 @@ footer {
     background-color: goldenrod;
     height: 50px;
 }
+
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.write{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.invia{
+    padding: 10px;
+}

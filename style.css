@@ -43,3 +43,41 @@
     width: 65%;
 
 }
+
+
+header{
+    background-color: red;
+    height: 50px;
+}
+
+.sx header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 5px;
+}
+.contact{
+    display: flex;
+}
+
+.nome{padding-left: 10px;}
+
+nav{
+    background-color: blueviolet;
+    height: 150px;
+}
+
+.sx main{
+    background-color: aquamarine;
+    height: calc(100% - 200px);
+}
+
+.dx main{
+    background-color: burlywood;
+    height: calc(100% - 100px);
+}
+
+footer{
+    background-color: goldenrod;
+    height: 50px;
+}

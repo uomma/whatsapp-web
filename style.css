@@ -7,6 +7,7 @@
 .sfondo {
     width: 100%;
     height: 100vh;
+    position: relative;
 
 }
 
@@ -19,4 +20,26 @@
 .sotto {
     background-color: rgb(167, 164, 161);
     height: calc(100% - 15%);
+}
+
+.centro {
+    background-color: rgb(186, 179, 136);
+    position: absolute; 
+    height: 80%;
+    width: 80%;
+    top: 80px;
+    right:calc(100% - 90%);
+    display: flex;
+    justify-content: space-around;
+}
+
+.sx{
+    background-color: rgb(143, 122, 82);
+    width: 35%;
+}
+
+.dx{
+    background-color: rgb(128, 138, 191);
+    width: 65%;
+
 }

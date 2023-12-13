@@ -30,7 +30,7 @@
                     <!-- HEADER SX -->
                     <header>
                         <div class="contact">
-                            <div class="foto"></div>
+                            <img class="foto" :src=" 'img/' + user.img">
                             <div class="nome">{{user.nome}}</div>
                         </div>
                         <div class="icons">
@@ -63,13 +63,14 @@
                     <main>
                         <div class="units" v-for="contact in contacts">
                             <div class=" generals">
-                            <img class="profile"  :src="'img/' + 'user.img'">
+                            <img class="profile"  :src="'img/' + contact.img">
                             <div class="person">
                                 <div class="name">{{contact.nome}}</div>
                                 <div class="last-message">last-message</div>
                             </div>
+                            <div class="time">{{contact.messages}} </div>
                         </div>
-                        <div class="time">time</div>
+                       
                 </div>
 
                 </main>
@@ -83,7 +84,7 @@
                     <div class="top">
 
                         <div class="generals">
-                            <div class=" chat">pic</div>
+                            <img class="chat">immagine della chat 
                             <div class="tizio">
                                 <div class="name">nome</div>
                                 <div class="last-online">last-online</div>

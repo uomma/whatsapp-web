@@ -3,13 +3,19 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            nome: 'whatsapp'
+            users: [
+                { nome: 'Luca', img: 'halo4.png' },
+                {  nome: 'Giovanni', img:'img.jpg'}
+            ],
+
 
 
         }
 
-    }
+    },
+    methods: {
+ 
 
-}
+    },
 
-).mount('#app')
+}).mount('#app');

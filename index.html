@@ -30,8 +30,8 @@
                     <!-- HEADER SX -->
                     <header>
                         <div class="contact">
-                            <div class="foto">foto</div>
-                            <div class="nome">nome</div>
+                            <div class="foto"></div>
+                            <div class="nome"></div>
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-circle-notch"></i>
@@ -61,85 +61,83 @@
 
                     <!-- MAIN SX -->
                     <main>
-                        <div class="units">
-                            <div class="generals">
-                                <div class="profile">pic</div>
-                                <div class="person">
-                                    <div class="name">nome</div>
-                                    <div class="last-message">last-message</div>
-                                </div>
+                        <div class="units" v-for="user in users">
+                            <div class=" generals">
+                            <img class="profile"  :src="'img/' + 'user.img'">
+                            <div class="person">
+                                <div class="name">{{user.nome}}</div>
+                                <div class="last-message">last-message</div>
                             </div>
-                            <div class="time">time</div>
                         </div>
-
-                    </main>
+                        <div class="time">time</div>
                 </div>
 
-                <!-- DX -->
-                <div class="dx">
+                </main>
+            </div>
 
-                    <!-- HEADER DX -->
-                    <header>
-                        <div class="top">
+            <!-- DX -->
+            <div class="dx">
 
-                            <div class="generals">
-                                <div class=" chat">pic</div>
-                                <div class="tizio">
-                                    <div class="name">nome</div>
-                                    <div class="last-online">last-online</div>
-                                </div>
-                            </div>
-                            <div class="icons destra">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <!-- HEADER DX -->
+                <header>
+                    <div class="top">
+
+                        <div class="generals">
+                            <div class=" chat">pic</div>
+                            <div class="tizio">
+                                <div class="name">nome</div>
+                                <div class="last-online">last-online</div>
                             </div>
                         </div>
-                    </header>
+                        <div class="icons destra">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </header>
 
 
-                    <!-- MAIN DX -->
-                    <main>
-                        <div class="area">
-                            <div class="bianco">
-                                <div class="recived ">
-                                    <div class="text">text</div>
-                                    <div class="time">time</div>
-                                </div>
-                            </div>
-                            <div class="verde">
-                                <div class="sent ">
-                                    <div class="text">text</div>
-                                    <div class="time">time</div>
-                                </div>
-                            </div>
-                            <div class="verde">
-                                <div class="sent ">
-                                    <div class="text">text</div>
-                                    <div class="time">time</div>
-                                </div>
+                <!-- MAIN DX -->
+                <main>
+                    <div class="area">
+                        <div class="bianco">
+                            <div class="recived ">
+                                <div class="text">text</div>
+                                <div class="time">time</div>
                             </div>
                         </div>
-                    </main>
+                        <div class="verde">
+                            <div class="sent ">
+                                <div class="text">text</div>
+                                <div class="time">time</div>
+                            </div>
+                        </div>
+                        <div class="verde">
+                            <div class="sent ">
+                                <div class="text">text</div>
+                                <div class="time">time</div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
 
-                    <!-- FOOTER -->
-                    <footer class="bottom">
-                        <div class="icons">
-                            <i class="fa-regular fa-face-smile"></i>
-                        </div>
-                        <div class="write">
-                            <input class="bar" type="text" placeholder="scrivi un messaggio">
-                            <button class="invia"> invia</button>
-                        </div>
-                        <div class="icons">
-                            <i class="fa-solid fa-microphone"></i>
-                        </div>
-                    </footer>
-                </div>
+                <!-- FOOTER -->
+                <footer class="bottom">
+                    <div class="icons">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div class="write">
+                        <input class="bar" type="text" placeholder="scrivi un messaggio">
+                        <button class="invia"> invia</button>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </footer>
             </div>
         </div>
-
-
+    </div>
     </div>
 
     <!--Vue from CDN-->

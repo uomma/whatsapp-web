@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
 
         <div class="container">
             <div class="sfondo">
@@ -31,7 +31,7 @@
                     <header>
                         <div class="contact">
                             <div class="foto"></div>
-                            <div class="nome"></div>
+                            <div class="nome">{{user.nome}}</div>
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-circle-notch"></i>
@@ -61,11 +61,11 @@
 
                     <!-- MAIN SX -->
                     <main>
-                        <div class="units" v-for="user in users">
+                        <div class="units" v-for="contact in contacts">
                             <div class=" generals">
                             <img class="profile"  :src="'img/' + 'user.img'">
                             <div class="person">
-                                <div class="name">{{user.nome}}</div>
+                                <div class="name">{{contact.nome}}</div>
                                 <div class="last-message">last-message</div>
                             </div>
                         </div>

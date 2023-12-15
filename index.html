@@ -61,84 +61,87 @@
 
                     <!-- MAIN SX -->
                     <main>
-                        <div class="units" v-for="contact in contacts">
+                        <div class="units" v-for="(contact, index) in contacts"  @click="contactView(index)">
                             <div class=" generals">
-                            <img class="profile"  :src="'img/' + contact.img">
-                            <div class="person">
-                                <div class="name">{{contact.nome}}</div>
-                                <div class="last-message">last-message</div>
+                                <img class="profile" :src="'img/' + contact.img">
+                                <div class="person">
+                                    <div class="name">{{contact.nome}}</div>
+                                </div>
+
                             </div>
-                            <div class="time">{{contact.messages}} </div>
+                            <div class="time" v-for="(message, index) in contacts[contactActive].messages">
+                                {{message.date}} {{message.time}}{{message.text}}
+                                <!-- CSS TODO:{{message.text}} va dentro last-message -->
+                                <div class="last-message"></div>
+
+                               
+                            </div>
+
                         </div>
-                       
+
+                    </main>
                 </div>
 
-                </main>
-            </div>
+                <!-- DX -->
+                <div class="dx">
 
-            <!-- DX -->
-            <div class="dx">
+                    <!-- HEADER DX -->
+                    <header>
+                        <div class="top">
 
-                <!-- HEADER DX -->
-                <header>
-                    <div class="top">
-
-                        <div class="generals">
-                            <img class="chat">immagine della chat 
-                            <div class="tizio">
-                                <div class="name">nome</div>
-                                <div class="last-online">last-online</div>
+                            <div class="generals">
+                                <img class="chat" :src="'img/' + contacts[contactActive].img">
+                                <div class="tizio">
+                                    <div class="name">{{contacts[contactActive].nome}} </div>
+                                    <div class="last-online">{{contacts[contactActive].message}}</div>
+                                </div>
+                            </div>
+                            <div class="icons destra">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <div class="icons destra">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </div>
-                    </div>
-                </header>
+                    </header>
 
 
-                <!-- MAIN DX -->
-                <main>
-                    <div class="area">
-                        <div class="bianco">
-                            <div class="recived ">
-                                <div class="text">text</div>
-                                <div class="time">time</div>
+                    <!-- MAIN DX -->
+                    <main>
+                        <div class="area" v-for="(message, index) in contacts[contactActive].messages">
+                            <div >
+                                <!-- QUA CI ANDRA UN V-IF(STATUS=== 'RECIVED') con una classe recived if true : sent if false
+                                "-->
+                                <div :class="{recived : message.status }">
+                                    <div class="text">{{message.text}}</div>
+                                    <div class="time">{{message.time}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="verde">
-                            <div class="sent ">
-                                <div class="text">text</div>
-                                <div class="time">time</div>
+                            <div class="verde">
+                                <div :class="{sent : message.status }">
+                                    <div class="text">text</div>
+                                    <div class="time">time</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="verde">
-                            <div class="sent ">
-                                <div class="text">text</div>
-                                <div class="time">time</div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
 
-                <!-- FOOTER -->
-                <footer class="bottom">
-                    <div class="icons">
-                        <i class="fa-regular fa-face-smile"></i>
-                    </div>
-                    <div class="write">
-                        <input class="bar" type="text" placeholder="scrivi un messaggio">
-                        <button class="invia"> invia</button>
-                    </div>
-                    <div class="icons">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
-                </footer>
+                        </div>
+                    </main>
+
+                    <!-- FOOTER -->
+                    <footer class="bottom">
+                        <div class="icons">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="write">
+                            <input class="bar" type="text" placeholder="scrivi un messaggio">
+                            <button class="invia"> invia</button>
+                        </div>
+                        <div class="icons">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </footer>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!--Vue from CDN-->

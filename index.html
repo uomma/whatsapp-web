@@ -61,7 +61,7 @@
 
                     <!-- MAIN SX -->
                     <main>
-                        <div class="units" v-for="(contact, index) in contacts"  @click="contactView(index)">
+                        <div class="units" v-for="(contact, index) in contacts"   @click="contactView(index)">
                             <div class=" generals">
                                 <img class="profile" :src="'img/' + contact.img">
                                 <div class="person">
@@ -108,18 +108,16 @@
                     <!-- MAIN DX -->
                     <main>
                         <div class="area" v-for="(message, index) in contacts[contactActive].messages">
-                            <div >
-                                <!-- QUA CI ANDRA UN V-IF(STATUS=== 'RECIVED') con una classe recived if true : sent if false
-                                "-->
+                            <div v-if=" message.status === 'recived'">
                                 <div :class="{recived : message.status }">
                                     <div class="text">{{message.text}}</div>
                                     <div class="time">{{message.time}}</div>
                                 </div>
                             </div>
-                            <div class="verde">
+                            <div v-else class="verde">
                                 <div :class="{sent : message.status }">
-                                    <div class="text">text</div>
-                                    <div class="time">time</div>
+                                    <div class="text">{{message.text}}</div>
+                                    <div class="time">{{message.time}}</div>
                                 </div>
                             </div>
 

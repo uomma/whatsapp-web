@@ -37,7 +37,7 @@ createApp({
                             date: '10/12/2023',
                             time: '11:45',
                             status: 'sent'
-                        }
+                        },
                     ]
                 },
                 {
@@ -93,12 +93,16 @@ createApp({
                             text: 'Con gli sponsor',
                             date: '27/02/2023',
                             time: '08:20', status: 'recived',
+                        },{
+                            text: 'Fiero di te amico mio',
+                            date: '27/02/2023',
+                            time: '08:24', status: 'sent',
                         }
 
                     ]
                 },
                 {
-                    nome: 'Gabriele', 
+                    nome: 'Gabriele',
                     img: 'img.jpg',
                     messages: [
                         {
@@ -129,24 +133,28 @@ createApp({
                         this.contactView.add(  'recived' )
                     }
                 }, */
+
         //ISSUE : MI STAMPA TUTTI GLI ORARI INVECE CHE SOLO UTLIMO 
-        //dico che l'obj visualizzato è uguale all' ultimo del array di quei messaggi 
-        //bisogna prendere la lunghezza del array nella posizione -1 
+        //dico che l'obj visualizzato è uguale all' ultimo del array dei messaggi nella posizione -1 
+    
 
         lastMessageTime(index) {
             let showedOne = this.contactView(index);
             console.log(showedOne);
-        this.messages(index).length - 1
+            
 
-
+            return lastMessage
         },
 
-
+//ISSUE: VISUALIZZAZIONE ERRATA DEI MESSAGGI NEL MAIN DX PERCHE NON CE DISTINZIONE TRA SENT E RECIVED
+//Assegnare status sent e recived ai messaggi nel  DONE
+//definire una condizione percui se message.status === 'recived' allora verrà attaccata la :class=" recived"
+//altimenti (else) :class="sent"
 
         contactView(index) {
             this.contactActive = index;//LETTERALMENTE QUESTO TI DICE INDEX
-            /*       console.log(this.contactActive);
-                  console.log(this.contactShown) */
+            console.log(this.contactActive);
+            console.log(this.contactShown);
         },
 
 

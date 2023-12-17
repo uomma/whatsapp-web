@@ -137,15 +137,9 @@ createApp({
         lastMessageTime(index) {
             let showedOne = this.contactView(index);
             console.log(showedOne);
-
-
             return lastMessage
         },
 
-        //ISSUE: VISUALIZZAZIONE ERRATA DEI MESSAGGI NEL MAIN DX PERCHE NON CE DISTINZIONE TRA SENT E RECIVED
-        //Assegnare status sent e recived ai messaggi nel  DONE
-        //definire una condizione percui se message.status === 'recived' allora verrà attaccata la :class=" recived" DONE
-        //altimenti (else) :class="sent" DONE
 
         contactView(index) {
             this.contactActive = index;//LETTERALMENTE QUESTO TI DICE INDEX
@@ -153,37 +147,33 @@ createApp({
             console.log(this.contactShown);
         },
 
-
-
-        //ISSUE: AL INVIO/ENTER PRESS BISOGNA PUSHARE QUELLO CHE CE DENTRO INPUT AD ARRAY MESSAGES CON LO STATUS SENT E DISPLAYARLO AS LAST MESSAGE NELLA CHAT
-
-
         // a creare un orario funizona ma non riesco a pushare valore
         generateRandomTime(mins, hours) {
             mins = Math.floor((Math.random() * 59) + 1);
             hours = Math.floor((Math.random() * 23) + 1);
             console.log(newTime)
             return this.newTime = hours + ':' + mins
-           
-            
-        }, 
+        },
 
-        enterPress(index) {
+        enterPress() {
             console.log('hai pressato enter');
             const newMessage = {
                 date: '31/12/2023',
-                time: this.newTime,
+                time: '12:00',
                 status: 'sent',
                 text: this.newMessage
             }
+            if (this.newMessage.trim() !== '') {
+                this.contacts[this.contactActive].messages.push(newMessage)
 
-            this.contacts[this.contactActive].messages.push(newMessage)
+            }
             console.log(newMessage)
 
             setTimeout(() => {
-
-                console.log('sono passati 3 secondi')
-                this.rispostaCPU()
+                if (this.newMessage.trim() !== '') {
+                    console.log('sono passati 3 secondi')
+                    this.rispostaCPU()
+                }
 
             }, 3000);
 

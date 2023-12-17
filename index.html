@@ -61,7 +61,7 @@
 
                     <!-- MAIN SX -->
                     <main>
-                        <div class="units" v-for="(contact, index) in contacts"   @click="contactView(index)">
+                        <div class="units" v-for="(contact, index) in contacts" @click="contactView(index)">
                             <div class=" generals">
                                 <img class="profile" :src="'img/' + contact.img">
                                 <div class="person">
@@ -74,7 +74,7 @@
                                 <!-- CSS TODO:{{message.text}} va dentro last-message -->
                                 <div class="last-message"></div>
 
-                               
+
                             </div>
 
                         </div>
@@ -131,8 +131,9 @@
                         </div>
                         <!-- ADD TEXT TO CHAT BY PRESSING KEY ENTER -->
                         <div class="write">
-                            <input class="bar" type="text" placeholder="scrivi un messaggio" v-model="newMessage" v-model="newTime" @keyup.enter="enterPress(index)" >
-                            <button class="invia" @click="enterPress(index)" > invia</button>
+                            <input class="bar" type="text" placeholder="scrivi un messaggio" v-model="newMessage"
+                                v-model="newTime" @keyup.enter="enterPress(index)">
+                            <button class="invia" @click="enterPress(index)"> invia</button>
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-microphone"></i>

@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             newMessage: '',
-            newTime: '',
+            newSearch: '',
             contactActive: 0,
             recived: true,
             sent: false,
@@ -12,9 +12,7 @@ createApp({
                 nome: 'Marcello',
                 img: 'halo4.png',
 
-            }
-
-            ,
+            },
             contacts: [
                 {
                     nome: 'Luca',
@@ -140,7 +138,6 @@ createApp({
             return lastMessage
         },
 
-
         contactView(index) {
             this.contactActive = index;//LETTERALMENTE QUESTO TI DICE INDEX
             console.log(this.contactActive);
@@ -176,9 +173,8 @@ createApp({
                 }
 
             }, 3000);
-
-
         },
+
         rispostaCPU() {
             const autoReply = {
                 date: '31/12/2023',
@@ -189,10 +185,15 @@ createApp({
             this.contacts[this.contactActive].messages.push(autoReply)
         },
 
+        //ISSUE: BISOGNA IMPLEMENTARE FILTERED LIST PER LA BARRA DI RICERCA CONTATTI NEL MAIN SX
 
-
-
-
+        search() {
+            if (this.newSearch.trim() !== '') {
+                return this.contacts.filter(element => element.nome.toLowerCase().includes(this.newSearch.toLowerCase()));
+            } else {
+                return this.contacts
+            }
+        }
 
 
 

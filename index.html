@@ -54,14 +54,14 @@
                             <button class="glasso">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                            <input class="bar" type="text" placeholder=" cerca o inizia una nuova chat">
+                            <input class="bar" type="text" placeholder=" cerca o inizia una nuova chat" v-model="newSearch" @keyup="search">
                         </div>
                     </nav>
 
 
                     <!-- MAIN SX -->
                     <main>
-                        <div class="units" v-for="(contact, index) in contacts" @click="contactView(index)">
+                        <div class="units" v-for="(contact, index) in search()" @click="contactView(index)">
                             <div class=" generals">
                                 <img class="profile" :src="'img/' + contact.img">
                                 <div class="person">

@@ -131,7 +131,7 @@
                         </div>
                         <!-- ADD TEXT TO CHAT BY PRESSING KEY ENTER -->
                         <div class="write">
-                            <input class="bar" type="text" placeholder="scrivi un messaggio" v-model="newMessage"  @keyup.enter="enterPress(index)" >
+                            <input class="bar" type="text" placeholder="scrivi un messaggio" v-model="newMessage" v-model="newTime" @keyup.enter="enterPress(index)" >
                             <button class="invia" @click="enterPress(index)" > invia</button>
                         </div>
                         <div class="icons">

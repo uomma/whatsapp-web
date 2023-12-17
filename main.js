@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             newMessage: '',
+            newTime: '',
             contactActive: 0,
             recived: true,
             sent: false,
@@ -154,13 +155,24 @@ createApp({
 
 
 
-
         //ISSUE: AL INVIO/ENTER PRESS BISOGNA PUSHARE QUELLO CHE CE DENTRO INPUT AD ARRAY MESSAGES CON LO STATUS SENT E DISPLAYARLO AS LAST MESSAGE NELLA CHAT
+
+
+        // a creare un orario funizona ma non riesco a pushare valore
+        generateRandomTime(mins, hours) {
+            mins = Math.floor((Math.random() * 59) + 1);
+            hours = Math.floor((Math.random() * 23) + 1);
+            console.log(newTime)
+            return this.newTime = hours + ':' + mins
+           
+            
+        }, 
+
         enterPress(index) {
             console.log('hai pressato enter');
             const newMessage = {
                 date: '31/12/2023',
-                time: '12:00',
+                time: this.newTime,
                 status: 'sent',
                 text: this.newMessage
             }
@@ -185,32 +197,15 @@ createApp({
                 status: 'recived'
             }
             this.contacts[this.contactActive].messages.push(autoReply)
-        }
-        /*
-        function generateRandomTime(mins, hours) {
-                        mins = Math.floor((Math.random() * 59) + 1);
-                        hours = Math.floor((Math.random() * 23) + 1);
-                        let time = hours + ':' + mins
-                        console.log(time)
-                        return console.log(generateRandomTime(mins, hours))
-        } 
-        
-                        const info =  generateRandomTime()  + generateRandomDate()
-                    console.log(info) */
-        /* function generateRandomDate(from, to) {
-            return new Date(
-                from.getTime() + Math.random() * (to.getTime() - from.getTime()),
-            );
+        },
 
-        };
-        return (new generateRandomDate(new Date(2023, 1, 1), new Date())).toLocaleDateString('it-IT');
 
-*/
 
-        /*   if (this.newMessage !== '') {
-              this.contacts[index].messages.push(this.newMessage)
-          }
-          console.log(this.newMessage) */
+
+
+
+
+
 
 
     },

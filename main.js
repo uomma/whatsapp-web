@@ -162,12 +162,12 @@ createApp({
             }
             if (this.newMessage.trim() !== '') {
                 this.contacts[this.contactActive].messages.push(newMessage)
-
+                this.newMessage='';
             }
             console.log(newMessage)
 
             setTimeout(() => {
-                if (this.newMessage.trim() !== '') {
+                if (this.newMessage.trim() === '') {
                     console.log('sono passati 3 secondi')
                     this.rispostaCPU()
                 }

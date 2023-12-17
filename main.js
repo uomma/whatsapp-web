@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            contactShown: 0,
+            newMessage: '',
             contactActive: 0,
             recived: true,
             sent: false,
@@ -93,7 +93,7 @@ createApp({
                             text: 'Con gli sponsor',
                             date: '27/02/2023',
                             time: '08:20', status: 'recived',
-                        },{
+                        }, {
                             text: 'Fiero di te amico mio',
                             date: '27/02/2023',
                             time: '08:24', status: 'sent',
@@ -126,36 +126,91 @@ createApp({
 
     },
     methods: {
-        //devi definire che il contatto che vedi deve stampare solo uno e non tutti gli alementi di array
 
-        /*         contactClass(index){
-                    if(this.message[this.contactActive].status === 'recived'){
-                        this.contactView.add(  'recived' )
-                    }
-                }, */
+
 
         //ISSUE : MI STAMPA TUTTI GLI ORARI INVECE CHE SOLO UTLIMO 
         //dico che l'obj visualizzato è uguale all' ultimo del array dei messaggi nella posizione -1 
-    
+
 
         lastMessageTime(index) {
             let showedOne = this.contactView(index);
             console.log(showedOne);
-            
+
 
             return lastMessage
         },
 
-//ISSUE: VISUALIZZAZIONE ERRATA DEI MESSAGGI NEL MAIN DX PERCHE NON CE DISTINZIONE TRA SENT E RECIVED
-//Assegnare status sent e recived ai messaggi nel  DONE
-//definire una condizione percui se message.status === 'recived' allora verrà attaccata la :class=" recived"
-//altimenti (else) :class="sent"
+        //ISSUE: VISUALIZZAZIONE ERRATA DEI MESSAGGI NEL MAIN DX PERCHE NON CE DISTINZIONE TRA SENT E RECIVED
+        //Assegnare status sent e recived ai messaggi nel  DONE
+        //definire una condizione percui se message.status === 'recived' allora verrà attaccata la :class=" recived" DONE
+        //altimenti (else) :class="sent" DONE
 
         contactView(index) {
             this.contactActive = index;//LETTERALMENTE QUESTO TI DICE INDEX
             console.log(this.contactActive);
             console.log(this.contactShown);
         },
+
+
+
+
+        //ISSUE: AL INVIO/ENTER PRESS BISOGNA PUSHARE QUELLO CHE CE DENTRO INPUT AD ARRAY MESSAGES CON LO STATUS SENT E DISPLAYARLO AS LAST MESSAGE NELLA CHAT
+        enterPress(index) {
+            console.log('hai pressato enter');
+            const newMessage = {
+                date: '31/12/2023',
+                time: '12:00',
+                status: 'sent',
+                text: this.newMessage
+            }
+
+            this.contacts[this.contactActive].messages.push(newMessage)
+            console.log(newMessage)
+
+            setTimeout(() => {
+
+                console.log('sono passati 3 secondi')
+                this.rispostaCPU()
+
+            }, 3000);
+
+
+        },
+        rispostaCPU() {
+            const autoReply = {
+                date: '31/12/2023',
+                time: '12:00',
+                text: 'Ok',
+                status: 'recived'
+            }
+            this.contacts[this.contactActive].messages.push(autoReply)
+        }
+        /*
+        function generateRandomTime(mins, hours) {
+                        mins = Math.floor((Math.random() * 59) + 1);
+                        hours = Math.floor((Math.random() * 23) + 1);
+                        let time = hours + ':' + mins
+                        console.log(time)
+                        return console.log(generateRandomTime(mins, hours))
+        } 
+        
+                        const info =  generateRandomTime()  + generateRandomDate()
+                    console.log(info) */
+        /* function generateRandomDate(from, to) {
+            return new Date(
+                from.getTime() + Math.random() * (to.getTime() - from.getTime()),
+            );
+
+        };
+        return (new generateRandomDate(new Date(2023, 1, 1), new Date())).toLocaleDateString('it-IT');
+
+*/
+
+        /*   if (this.newMessage !== '') {
+              this.contacts[index].messages.push(this.newMessage)
+          }
+          console.log(this.newMessage) */
 
 
     },

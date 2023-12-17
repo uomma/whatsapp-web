@@ -129,9 +129,10 @@
                         <div class="icons">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
+                        <!-- ADD TEXT TO CHAT BY PRESSING KEY ENTER -->
                         <div class="write">
-                            <input class="bar" type="text" placeholder="scrivi un messaggio">
-                            <button class="invia"> invia</button>
+                            <input class="bar" type="text" placeholder="scrivi un messaggio" v-model="newMessage"  @keyup.enter="enterPress(index)" >
+                            <button class="invia" @click="enterPress(index)" > invia</button>
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-microphone"></i>

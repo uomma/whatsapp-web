@@ -54,33 +54,35 @@
                             <button class="glasso">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                            <input class="bar" type="text" placeholder=" cerca o inizia una nuova chat" v-model="newSearch" @keyup="search">
+                            <input class="bar" type="text" placeholder=" cerca o inizia una nuova chat"
+                                v-model="newSearch" @keyup="search">
                         </div>
                     </nav>
 
 
                     <!-- MAIN SX -->
                     <main>
-                        <div class="units" v-for="(contact, index) in search()" @click="contactView(index)">
-                            <div class=" generals">
+                        <div class=" generals">
+                            <div class="units" v-for="(contact, index) in search(index)" @click="contactView(index)">
                                 <img class="profile" :src="'img/' + contact.img">
                                 <div class="person">
                                     <div class="name">{{contact.nome}}</div>
+                                    <div class="time">
+                                        <div class="last-message">
+                                            {{contacts[contactActive].messages[contacts[contactActive].messages.length
+                                            - 1].text }} </div>
+                                        <div class="last-online">
+                                            {{contacts[contactActive].messages[contacts[contactActive].messages.length -
+                                            1].date }}
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
-                            <div class="time" v-for="(message, index) in contacts[contactActive].messages">
-                                {{message.date}} {{message.time}}{{message.text}}
-                                <!-- CSS TODO:{{message.text}} va dentro last-message -->
-                                <div class="last-message"></div>
-
-
-                            </div>
-
                         </div>
-
-                    </main>
                 </div>
+
+                </main>
+
 
                 <!-- DX -->
                 <div class="dx">
@@ -88,12 +90,15 @@
                     <!-- HEADER DX -->
                     <header>
                         <div class="top">
-
-                            <div class="generals">
-                                <img class="chat" :src="'img/' + contacts[contactActive].img">
+                            <div class="sinistra">
+                                <img class="foto" :src="'img/' + contacts[contactActive].img">
                                 <div class="tizio">
                                     <div class="name">{{contacts[contactActive].nome}} </div>
-                                    <div class="last-online">{{contacts[contactActive].message}}</div>
+                                    <div class="ultimo-accesso">
+                                        {{contacts[contactActive].messages[contacts[contactActive].messages.length -
+                                        1].date }}
+
+                                    </div>
                                 </div>
                             </div>
                             <div class="icons destra">
@@ -131,8 +136,8 @@
                         </div>
                         <!-- ADD TEXT TO CHAT BY PRESSING KEY ENTER -->
                         <div class="write">
-                            <input class="bar" type="text" placeholder="scrivi un messaggio" v-model="newMessage"
-                                v-model="newTime" @keyup.enter="enterPress(index)">
+                            <input class="bar" type="text" placeholder=" scrivi un messaggio"
+                                v-model="newMessage" v-model="newTime" @keyup.enter="enterPress(index)">
                             <button class="invia" @click="enterPress(index)"> invia</button>
                         </div>
                         <div class="icons">

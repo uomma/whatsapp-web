@@ -18,17 +18,16 @@
 
 
 .sopra {
-    background-color: rgb(25, 64, 25);
+    background-color: #00A884;
     height: 15%;
 }
 
 .sotto {
-    background-color: rgb(167, 164, 161);
+    background-color: #DFDEDB;
     height: calc(100% - 15%);
 }
 
 .centro {
-    background-color: rgb(186, 179, 136);
     position: absolute;
     height: 80%;
     width: 80%;
@@ -39,7 +38,7 @@
 }
 
 .sx {
-    background-color: rgb(143, 122, 82);
+    background-color: white;
     width: 35%;
 }
 
@@ -56,8 +55,9 @@ img {
 
 /* HEADERS */
 header {
-    background-color: red;
+    background-color: #F0F2F5;
     height: 50px;
+
 }
 
 /* SX */
@@ -66,6 +66,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+
 }
 
 .contact {
@@ -75,13 +76,17 @@ header {
 
 .foto {
     background-color: blue;
+    margin-left: 1 0px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-   
+
 
 }
 
 .nome {
     padding-left: 10px;
+    font-weight: 800;
 }
 
 .icons .fa-solid {
@@ -100,7 +105,9 @@ nav {
     height: 75px;
     display: flex;
     align-items: center;
-    background-color: rgb(180, 240, 220);
+    background-color: #F0F2F5;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 
 }
 
@@ -124,80 +131,103 @@ nav {
 .search {
     height: 75px;
     display: flex;
-    padding: 20px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
+    padding: 20px;  
+    border-bottom: 1px solid black;
+
 }
 
 .glasso {
     padding: 10px;
-   
+
 }
 
 .bar {
+
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
     width: 90%;
 }
 
 /* SX MAIN */
 
 .sx main {
-    background-color: rgb(18, 123, 88);
     height: calc(100% - 200px);
-}
-
-.units {
-    width: 100%;
-    margin: 0;
-    padding: 20px;
     display: flex;
-    justify-content: space-between;
+
 }
 
 .generals {
+    width: 100%;
+background-color: #F0F2F5;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.units {
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin: 0, 1px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: left;
+    background-color: white
 }
 
 .profile {
-    height: 60%;
-    width: 15%;
+    width: 50px;
+    height: 50px;
     background-color: white;
+    border-radius: 50%;
+
 }
 
 .person {
     padding-left: 20px;
 }
 
+.last-online {
+    padding-left: 20px;
+}
 
 /* DX */
 
 
 /* HEADER */
-.top {
+.dx header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-right: 15px;
+}
+
+.top {
+    padding-right: 20px;
+    width: 100%;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .tizio {
-    padding-left: 20px;
+    padding-left: 15px;
     display: flex;
-    flex-direction: column;
     align-items: start;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-
-.chat {
-    background-color: white;
+.sinistra {
+    display: flex;
+    align-items: center;
 }
-
 
 /* MAIN */
 .dx main {
-    background-color: burlywood;
+    background-image: url("img/wa-bg.jpg");
     height: calc(100% - 100px);
 }
 
@@ -218,7 +248,7 @@ nav {
 .bianco {
     display: flex;
     justify-content: left;
-    margin:  5px 10px;
+    margin: 5px 10px;
 
 }
 
@@ -235,14 +265,14 @@ nav {
 .verde {
     display: flex;
     justify-content: right;
-    margin:  5px 10px;
+    margin: 5px 10px;
 
 }
 
 .text {
     display: flex;
     justify-content: flex-start;
-   /*  padding-top: 5px; */
+    /*  padding-top: 5px; */
     padding-left: 10px;
     align-items: baseline;
 }
@@ -255,7 +285,7 @@ nav {
 
 /* FOOTER */
 footer {
-    background-color: goldenrod;
+    background-color: #F0F2F5;
     height: 50px;
 }
 
@@ -276,4 +306,7 @@ footer {
     padding: 10px;
 }
 
-
+.bottom .icons{
+    font-size: larger;
+    font-weight: 800;
+}

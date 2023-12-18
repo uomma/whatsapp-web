@@ -126,25 +126,12 @@ createApp({
     },
     methods: {
 
-
-
-        //ISSUE : MI STAMPA TUTTI GLI ORARI INVECE CHE SOLO UTLIMO 
-        //dico che l'obj visualizzato è uguale all' ultimo del array dei messaggi nella posizione -1 
-
-
-        lastMessageTime(index) {
-            let showedOne = this.contactView(index);
-            console.log(showedOne);
-            return lastMessage
-        },
-
         contactView(index) {
             this.contactActive = index;//LETTERALMENTE QUESTO TI DICE INDEX
-            console.log(this.contactActive);
-            console.log(this.contactShown);
+           
         },
 
-        // a creare un orario funizona ma non riesco a pushare valore
+        // x creare un orario funizona ma non riesco a pushare valore
         generateRandomTime(mins, hours) {
             mins = Math.floor((Math.random() * 59) + 1);
             hours = Math.floor((Math.random() * 23) + 1);
@@ -162,7 +149,7 @@ createApp({
             }
             if (this.newMessage.trim() !== '') {
                 this.contacts[this.contactActive].messages.push(newMessage)
-                this.newMessage='';
+                this.newMessage = '';
             }
             console.log(newMessage)
 
@@ -185,20 +172,13 @@ createApp({
             this.contacts[this.contactActive].messages.push(autoReply)
         },
 
-        //ISSUE: BISOGNA IMPLEMENTARE FILTERED LIST PER LA BARRA DI RICERCA CONTATTI NEL MAIN SX
-
         search() {
             if (this.newSearch.trim() !== '') {
                 return this.contacts.filter(element => element.nome.toLowerCase().includes(this.newSearch.toLowerCase()));
             } else {
                 return this.contacts
             }
-        }
-
-
-
-
-
+        },
     },
 
 }).mount('#app');
